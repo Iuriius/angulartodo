@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: linear-gradient(to right top, #0081ff, #0083fc, #0084f9, #0086f6, #0087f3, #0092f8, #009dfc, #00a7ff, #00bdff, #00d2ff, #00e5ff, #00f7ff);
+}
+
+.app-root {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+
+
+    @media screen and (min-width: 320px) {
+        width: 320px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 768px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+    }
+}

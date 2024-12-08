@@ -1,0 +1,32 @@
+<main>
+    <div class="input">
+        <input type="text" placeholder="What needs to be done?" autofocus [value]="text" (keyup)="changeText($event)"
+            (keyup.enter)="addTodo()" />
+        <button type="button" (click)="addTodo()">ADD A TASK</button>
+        <ul class="list">
+            @for (todo of visibleTodos(); track todo.text) {
+            <li class="todo-item" [class.is-editing]="editingId === todo.id" [class.completed]="todo.isCompleted">
+                <input type="checkbox" [checked]="todo.isCompleted" (change)="toggleTodo(todo.id)" />
+                <span>{{ todo.text }}</span>
+                <!-- <button (click)="editTodo(todo.id, todo.text)" type="button">Edit</button> -->
+                <button (click)="deleteTodo(todo.id)" type="button">Delete</button>
+                @if (isEditing && editingId === todo.id) {
+                <input type="text" [(ngModel)]="text" (keyup.enter)="saveTodo(todo.id, text)" />
+                <button (click)="saveTodo(todo.id, text)" type="button">Save</button>
+                }
+            </li>
+            } @empty {
+            <li class="todo-empty">There are no tasks</li>
+            }
+        </ul>
+        <div class="buttons">
+            <button type="button" (click)="changeFilter($event, filterEnum.all)">ALL</button>
+            <button type="button" (click)="changeFilter($event, filterEnum.active)">ACTIVE</button>
+            <button type="button" (click)="changeFilter($event, filterEnum.completed)">COMPLETED</button>
+        </div>
+        <div class="buttons">
+            <p class="active-count">Active: {{ activeCount() }}</p>
+            <p class="all-count">All: {{ todosAll() }}</p>
+        </div>
+    </div>
+</main>

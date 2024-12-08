@@ -1,0 +1,124 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
+    input {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    }
+}
+
+button {
+    color: slateblue;
+    font-weight: bolder;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    &:hover,
+    &:focus {
+        color: whitesmoke;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        outline: none;
+        background: rgba(0, 0, 0, 0.08);
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-empty {
+    padding: 0.5rem;
+    color: snow;
+}
+
+.todo-item {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    background-color: #ffe5fe;
+    color: rebeccapurple;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    text-overflow: ellipsis;
+
+    @media screen and (min-width: 320px) {
+        width: 300px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 500px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 999px;
+    }
+}
+
+.active-count {
+    font-weight: bold;
+    color: snow;
+    padding: 0.3rem;
+    background-color: #fe30c6;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.all-count {
+    font-weight: bold;
+    color: snow;
+    padding: 0.3rem;
+    background-color: #675b7a;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.todo-item {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    background-color: #ffe5fe;
+    color: rebeccapurple;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    &.completed {
+        text-decoration: line-through;
+        color: gray;
+        background-color: #f0f0f0;
+    }
+}
