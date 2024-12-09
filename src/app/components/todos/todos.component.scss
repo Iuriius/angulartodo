@@ -6,7 +6,6 @@ main {
 }
 
 .input {
-
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -88,6 +87,19 @@ button {
     @media screen and (min-width: 1200px) {
         width: 999px;
     }
+
+    &.completed {
+        background-color: #f0f0f0;
+        color: gray;
+    }
+
+    &.completed span {
+        text-decoration: line-through;
+    }
+
+    &.completed .del {
+        text-decoration: none;
+    }
 }
 
 .active-count {
@@ -106,19 +118,4 @@ button {
     background-color: #675b7a;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.todo-item {
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
-    background-color: #ffe5fe;
-    color: rebeccapurple;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
-    &.completed {
-        text-decoration: line-through;
-        color: gray;
-        background-color: #f0f0f0;
-    }
 }

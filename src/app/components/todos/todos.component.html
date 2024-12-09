@@ -9,7 +9,7 @@
                 <input type="checkbox" [checked]="todo.isCompleted" (change)="toggleTodo(todo.id)" />
                 <span>{{ todo.text }}</span>
                 <!-- <button (click)="editTodo(todo.id, todo.text)" type="button">Edit</button> -->
-                <button (click)="deleteTodo(todo.id)" type="button">Delete</button>
+                <button class="del" (click)="deleteTodo(todo.id)" type="button">Delete</button>
                 @if (isEditing && editingId === todo.id) {
                 <input type="text" [(ngModel)]="text" (keyup.enter)="saveTodo(todo.id, text)" />
                 <button (click)="saveTodo(todo.id, text)" type="button">Save</button>
